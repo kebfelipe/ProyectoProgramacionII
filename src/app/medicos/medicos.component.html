@@ -1,0 +1,38 @@
+<router-outlet></router-outlet>
+<div class="wrapper">
+    <h1>Gestion de Medicos</h1>
+    
+    <div class="row boton-nuevo">
+        <div class="col"></div>
+        <div class="button-agregar">
+            <button type="button" class="btn btn-primary">+ Nuevo Medico</button>
+        </div>
+    </div>
+    
+
+    <div class="tabledoctor">
+        <table class="table table-bordered table-hover">
+            <thead> 
+                <tr>
+                    <th>Foto</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>CMP</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let medico of medicos">
+                    <td class="align-middle table-img"><img [src]="medico.fotoUrl" class="imgdoctor" /></td>
+                    <td class="align-middle">{{medico.idMedico}}</td>
+                    <td class="align-middle">{{medico.nombres}} {{medico.apellidos}}</td>
+                    <td class="align-middle">{{medico.cmp}}</td>
+                    <td class="align-middle">
+                        <button type="button" class="btn btn-warning col"><i class="bi bi-pencil"></i> Editar</button>
+                        <button type="button" class="btn btn-danger "><i class="bi bi-trash"></i> Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
