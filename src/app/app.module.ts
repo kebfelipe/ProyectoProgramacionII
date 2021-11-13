@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { HomeComponent } from './home/home.component';
 import { MedicoComponent } from './medico/medico.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MedicoComponent } from './medico/medico.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

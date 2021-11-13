@@ -1,0 +1,31 @@
+.h2{
+    margin-top: 20px;
+}
+
+.wrapper_formulario{
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.imgdoctor{
+    width: 200px;
+    height: 200px;
+}
+
+.boton-nuevo{
+    margin-top: 2px;
+    margin-bottom: 7px;
+}
+
+.button-agregar{
+    width: 170px;
+}
+
+.medico_apellido{
+    padding-left: 10px;
+}
+
+.regresar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

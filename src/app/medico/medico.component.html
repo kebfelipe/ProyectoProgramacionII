@@ -1,1 +1,51 @@
-<p>medico works!</p>
+<div class="row">
+    <div class="button-agregar">
+        <button type="button" class="btn btn btn-outline-dark active regresar" (click)=regresar()>Regresar</button>
+    </div>
+</div>
+
+<h2 *ngIf="esNuevo(); else elseBlock">
+    Registro de Medicos
+</h2>
+<ng-template #elseBlock> <h2>Medico</h2></ng-template>
+
+<div class="border border-dark rounded wrapper_formulario">
+    <div class="input-group">
+        <div class="form-group col-md-2">
+            <div>
+                <img class="rounded imgdoctor" [src]="medico_url"/>
+            </div>
+            <input type="file" class="form-control-file" id="img_foto_medico"  [(ngModel)]="medico_url">
+        </div>
+        <div class="form-group col">
+            <div class="input-group medico_informacion_nombre">
+                <div class="col medico_nombre">
+                    <label for="lbl_medico_nombre">Nombre: </label>
+                    <input type="email" class="form-control" id="lbl_medico_nombre" aria-describedby="sm_medico_nombre" [(ngModel)]="medico_nombre">
+                    <small id="sm_medico_nombre" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+                <div class="col medico_apellido">
+                    <label for="lbl_apellido_nombre">Apellido: </label>
+                    <input type="email" class="form-control" id="lbl_apellido_nombre" aria-describedby="sm_medico_apellido"  [(ngModel)]="medico_apellido">
+                    <small id="sm_medico_apellido" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+            </div>
+            <div class="medico_informacion_cmp">
+                <div class="col">
+                    <label for="lbl_medico_cmp">CMP: </label>
+                    <input type="email" class="form-control" id="lbl_medico_cmp" aria-describedby="sm_medico_cmp" [(ngModel)]="medico_cmp">
+                    <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="button-agregar" *ngIf="esNuevo()">
+                    <button type="button" class="btn btn btn-success" (click)=registarmedico()>Registrar Medico</button>
+                </div>
+                <div class="button-agregar" *ngIf="!esNuevo()">
+                    <button type="button" class="btn btn btn-success"  (click)=modificarmedico()>Modificar Medico</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

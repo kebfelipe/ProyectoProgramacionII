@@ -36,6 +36,10 @@ header div h1{
     margin-left: 10px;
 }
 
+.link-home{
+    text-decoration: none;
+}
+
 .wrapper{
     margin: 0 auto;
     width: 90%;

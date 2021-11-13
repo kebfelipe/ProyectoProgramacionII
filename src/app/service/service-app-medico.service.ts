@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Medico } from '../model/Medico';
 import  {map} from "rxjs/operators";
 
 
@@ -15,5 +14,17 @@ export class ServiceAppMedicoService {
 
   get(endpoint:string){
     return this.http.get(this.url + endpoint);
+  }
+
+  postMedico(endpoint:string, data:any){
+    return this.http.post(this.url + endpoint, data);
+  }
+
+  putMedico(endpoint:string, data:any){
+    return this.http.put(this.url + endpoint, data);
+  }
+
+  delete(endpoint:string){
+    return this.http.delete(this.url + endpoint);
   }
 }

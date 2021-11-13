@@ -1,11 +1,12 @@
 <router-outlet></router-outlet>
+
 <div class="wrapper">
     <h1>Gestion de Medicos</h1>
     
     <div class="row boton-nuevo">
         <div class="col"></div>
         <div class="button-agregar">
-            <button type="button" class="btn btn-primary">+ Nuevo Medico</button>
+            <button type="button" class="btn btn-primary" (click)=vermedico(0)>+ Nuevo Medico</button>
         </div>
     </div>
     
@@ -28,8 +29,8 @@
                     <td class="align-middle">{{medico.nombres}} {{medico.apellidos}}</td>
                     <td class="align-middle">{{medico.cmp}}</td>
                     <td class="align-middle">
-                        <button type="button" class="btn btn-warning col"><i class="bi bi-pencil"></i> Editar</button>
-                        <button type="button" class="btn btn-danger "><i class="bi bi-trash"></i> Borrar</button>
+                        <button type="button" class="btn btn-warning first" (click)=vermedico(medico.idMedico) ><i class="bi bi-pencil" ></i> Editar</button>
+                        <button type="button" class="btn btn-danger " (click)=eliminarMedico(medico.idMedico)><i class="bi bi-trash"></i> Borrar</button>
                     </td>
                 </tr>
             </tbody>
