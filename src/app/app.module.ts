@@ -9,13 +9,15 @@ import { MedicosComponent } from './medicos/medicos.component';
 import { HomeComponent } from './home/home.component';
 import { MedicoComponent } from './medico/medico.component';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MedicosComponent,
     HomeComponent,
-    MedicoComponent
+    MedicoComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

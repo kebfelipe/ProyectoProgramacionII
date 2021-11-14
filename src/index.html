@@ -10,22 +10,81 @@
 </head>
 
 <body class="bg-white">
-  <header>
-    <div class="wrapper">
-      <a href="/" class="btn-group link-home">
-        <img class="logo" src="./assets/logo_angel.png" />
-        <h1>Hospital <br> Los Angeles</h1>
-      </a>
+
+  <div class="input-group">
+    <div class="bar_menu">
+      <header>
+        <a href="/" class="btn-group link-home">
+          <img class="logo" src="./assets/logo_angel.png" />
+          <h1>Hospital <br> Los Angeles</h1>
+        </a>
+      </header>
+      <div class="lineaseparadora"></div>
+      <nav>
+        <ul>
+          <a class="nav-color" href="/">
+            <li>
+              <i class="bi bi-house-fill icon-menu-home d-inline"></i>
+              <p class="d-inline">Home</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/medicos">
+            <li>
+              <i class="d-inline bi bi-person-badge-fill icon-menu-home"></i>
+              <p class="d-inline">Médicos</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/especialidades">
+            <li>
+              <i class="d-inline bi bi-briefcase-fill icon-menu-home"></i>
+              <p class="d-inline">Especialidades</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/pacientes">
+            <li>
+              <i class="d-inline bi bi-people-fill icon-menu-home"></i>
+              <p class="d-inline">Pacientes</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/consultas">
+            <li>
+              <i class="d-inline bi bi-calendar icon-menu-home"></i>
+              <p class="d-inline">Consultas</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/laboratorios">
+            <li>
+              <i class="d-inline bi bi-building icon-menu-home"></i>
+              <p class="d-inline">Laboratorios</p>
+            </li>
+          </a>
+
+        </ul>
+      </nav>
     </div>
-  </header>
-  <div class="wrapper">
-    <app-root></app-root>
+
+    <div class="body_hospital">
+      <div class="header_wrapper">
+        <div class="row">
+          <div class="col"></div>
+          <div>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <app-root></app-root>
+      </div>
+
+      <footer>
+        <div>
+          <p class="footer-message">Hospital Los Angeles © 2021. Todos los derechos reservados</p>
+        </div>
+      </footer>
+    </div>
   </div>
-  <footer>
-    <div>
-      <p class="footer-message">Hospital Los Angeles © 2021. Todos los derechos reservados</p>
-    </div>
-  </footer>
 </body>
 
 </html>

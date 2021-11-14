@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './not-found/not-found.component';
 import { MedicoComponent } from './medico/medico.component';
 import { HomeComponent } from './home/home.component';
 import { MedicosComponent } from './medicos/medicos.component';
@@ -8,7 +9,8 @@ const routes: Routes = [
   {path: "", component: HomeComponent},
   {path: 'medicos', component: MedicosComponent},
   {path: 'medico', component: MedicoComponent},
-  {path: 'medico/:idmedico', component: MedicoComponent}
+  {path: 'medico/:idmedico', component: MedicoComponent},
+  {path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

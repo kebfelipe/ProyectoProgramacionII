@@ -32,7 +32,7 @@ export class MedicoComponent implements OnInit {
           this.medico_nuevo = response;
 
             if(this.medico_nuevo.fotoUrl == null || this.medico_nuevo.fotoUrl == ""){
-              this.medico_nuevo.fotoUrl = "/assets/doctor.png" 
+              this.medico_nuevo.fotoUrl = "/assets/doctor.png"; 
             }
 
             this.medico_nombre = this.medico_nuevo.nombres!;
@@ -40,6 +40,10 @@ export class MedicoComponent implements OnInit {
             this.medico_cmp = this.medico_nuevo.cmp!;
             this.medico_url = this.medico_nuevo.fotoUrl!;
         });
+      }
+
+      if(this.medico_url == null || this.medico_url == ""){
+        this.medico_url = "/assets/doctor.png"; 
       }
 
     })

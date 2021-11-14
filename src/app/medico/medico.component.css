@@ -5,6 +5,7 @@
 .wrapper_formulario{
     padding: 20px;
     margin-bottom: 20px;
+    background: #fff;
 }
 
 .imgdoctor{
@@ -23,6 +24,10 @@
 
 .medico_apellido{
     padding-left: 10px;
+}
+
+.medico_foto{
+    width: 210px;
 }
 
 .regresar{

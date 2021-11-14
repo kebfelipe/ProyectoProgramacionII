@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+:root {
+    --barmenu-width: 250px;
+    --bs-body-color: #6c757d;
+}
 
 * {
     margin: 0;
@@ -7,52 +11,121 @@
 }
 
 body{
-    background: #E6E6E6;
+    background:#fafbfe;
+    width: 100%;
+    height: 100%;
 }
 
-h1{
+h1, h2, h3{
     color: #14279B;
 }
 
-header{
-    background: #14279B;
-    padding: 10px;
+.bar_menu{
+    width: var(--barmenu-width);
+    height: 100%;
+    background: #313a46;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
-header div{
+.bar_menu .nav-color{
+    color: var(--bs-body-color);
+}
+
+.bar_menu header{
     width: 100%;
+    padding: 10px 30px 5px 30px;
 }
 
-header div img{
-    width: 70px;
-    height: 50px;
+.bar_menu header .link-home{
+    text-decoration: none;
+    width: 100%;
+
 }
 
-header div h1{
-    width: 150px;
-    height: 50px;
-    font-size: 20px;
+.bar_menu header img{
+    width: 50px;
+    height: 40px;
+}
+
+.bar_menu header h1{
+    font-size: 18px;
     color: #fff;
     margin-left: 10px;
+    text-align: center;
 }
 
-.link-home{
-    text-decoration: none;
-}
-
-.wrapper{
+.bar_menu .lineaseparadora{
+    border-top: #eef2f7 1px solid;
     margin: 0 auto;
     width: 90%;
 }
 
+.bar_menu nav{
+    margin-top: 10px;
+}
+
+.bar_menu nav ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+.bar_menu nav ul a li{
+    list-style: none;
+    padding: 15px 10px 15px 20px;
+}
+
+.bar_menu nav ul a {
+    text-decoration: none;
+    color: #8391a2;
+}
+
+.bar_menu nav ul a li:hover{
+    color: #fafbfe;
+    background: #525D67;
+}
+
+.bar_menu nav ul a li p{
+    margin-left: 10px;
+}
+
+.body_hospital{
+    position: fixed;
+    left: var(--barmenu-width);
+    width: calc(100% - var(--barmenu-width));
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    background: #eef2f7;
+}
+
+.body_hospital .header_wrapper{
+    width: 100%;
+    background: #fafbfe;
+    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+}
+
+.body_hospital .header_wrapper img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.wrapper{
+    margin: 0 auto;
+    width: 95%;
+    
+}
+
 footer{
-    background: #5C7AEA;
+    height: 50px;
 }
 
 .footer-message{
-    background: #3D56B2;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
-    color:aliceblue;
+    color:#313a46;
 }
