@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
   navegar() {
     this.router.navigate(['/medicos'])
   }
+
+  pacientes(){
+    this.router.navigate(['/pacientes'])
+  }
 }

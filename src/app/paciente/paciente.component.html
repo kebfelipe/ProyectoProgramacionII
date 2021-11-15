@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="button-agregar">
+        <button type="button" class="btn btn btn-outline-dark active regresar" (click)=regresar()>Regresar</button>
+    </div>
+</div>
+
+<h2 *ngIf="esNuevo(); else elseBlock">
+    Registro de Medicos
+</h2>
+<ng-template #elseBlock> <h2>Medico</h2></ng-template>
+
+<div class="border border-dark rounded wrapper_formulario">
+    <div class="input-group">
+        <div class="form-group col">
+            <div class="medico_informacion_cmp">
+                <div class="col">
+                    <label for="lbl_medico_cmp">Nombres: </label>
+                    <input type="text" class="form-control" id="lbl_medico_nombres" [(ngModel)]="paciente_nombres" aria-describedby="sm_medico_nombres">
+                    <small id="sm_medico_nombres" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+            </div>
+            <div class="medico_informacion_cmp">
+                <div class="col">
+                    <label for="lbl_medico_cmp">Apellidos: </label>
+                    <input type="text" class="form-control" id="lbl_medico_cmp"[(ngModel)]="paciente_apellidos" aria-describedby="sm_medico_cmp">
+                    <small id="sm_medico_ape" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+            </div>
+            <div class="medico_informacion_cmp">
+                <div class="col">
+                    <label for="lbl_medico_cmp">DNI: </label>
+                    <input type="number"  class="form-control" id="lbl_medico_cmp" aria-describedby="sm_medico_cmp" [(ngModel)]="paciente_dni">
+                    <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio. Escribir 8 números</small>
+                </div>
+            </div>
+            <div class="medico_informacion_cmp">
+                <div class="col">
+                    <label for="lbl_medico_cmp">Direccion: </label>
+                    <input type="text" class="form-control" id="lbl_medico_cmp" [(ngModel)]="paciente_direccion" aria-describedby="sm_medico_cmp">
+                    <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+            </div>
+            <div class="medico_informacion_cmp">
+                <div class="col">
+                    <label for="lbl_medico_cmp">Email: </label>
+                    <input type="email" class="form-control" id="lbl_medico_cmp" [(ngModel)]="paciente_email" aria-describedby="sm_medico_cmp">
+                    <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+            </div>
+            <div class="medico_informacion_cmp">
+                <div class="col">
+                    <label for="lbl_medico_cmp">Telefono: </label>
+                    <input type="number" class="form-control" id="lbl_medico_cmp" [(ngModel)]="paciente_telefono" aria-describedby="sm_medico_cmp">
+                    <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio. Escribir 9 números</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col"></div>
+                <div class="button-agregar" *ngIf="esNuevo()">
+                    <button type="button" class="btn btn btn-success" (click)=registrarPaciente()>Registrar Paciente</button>
+                </div>
+                <div class="button-agregar" *ngIf="!esNuevo()">
+                    <button type="button" class="btn btn btn-success" (click)=modificarPaciente()>Modificar Paciente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
