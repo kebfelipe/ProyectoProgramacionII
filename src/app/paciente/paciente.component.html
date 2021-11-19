@@ -1,17 +1,20 @@
+<!-- boton para regresar a la pantalla donde se muestran todos los pacientes -->
 <div class="row">
     <div class="button-agregar">
         <button type="button" class="btn btn btn-outline-dark active regresar" (click)=regresar()>Regresar</button>
     </div>
 </div>
-
+<!-- Comprobamos si es un nuevo paciente que se va a registrar, de lo contrario se va a editar a un paciente -->
 <h2 *ngIf="esNuevo(); else elseBlock">
     Registro de Medicos
 </h2>
 <ng-template #elseBlock> <h2>Medico</h2></ng-template>
 
+<!-- Formulario -->
 <div class="border border-dark rounded wrapper_formulario">
     <div class="input-group">
         <div class="form-group col">
+            <!-- Input para guardar el nombre del paciente -->
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">Nombres: </label>
@@ -19,6 +22,7 @@
                     <small id="sm_medico_nombres" class="form-text text-muted">Campo Obligatorio.</small>
                 </div>
             </div>
+            <!-- Input para guardar el apellido del paciente -->
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">Apellidos: </label>
@@ -26,6 +30,7 @@
                     <small id="sm_medico_ape" class="form-text text-muted">Campo Obligatorio.</small>
                 </div>
             </div>
+            <!-- Input para guardar el dni del paciente -->
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">DNI: </label>
@@ -33,6 +38,7 @@
                     <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio. Escribir 8 números</small>
                 </div>
             </div>
+            <!-- Input para guardar la direccion del paciente -->
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">Direccion: </label>
@@ -40,6 +46,7 @@
                     <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio.</small>
                 </div>
             </div>
+            <!-- Input para guardar el correo del paciente -->
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">Email: </label>
@@ -47,6 +54,7 @@
                     <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio.</small>
                 </div>
             </div>
+            <!-- Input para guardar el telefono del paciente -->
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">Telefono: </label>
@@ -54,12 +62,14 @@
                     <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio. Escribir 9 números</small>
                 </div>
             </div>
-
+            <!-- Espacio de botones -->
             <div class="row">
                 <div class="col"></div>
+                <!-- Comprobamos que boton usar, si no viene un id como parametro, es un paciente nuevo, y usamos el boton registrar paciente -->
                 <div class="button-agregar" *ngIf="esNuevo()">
                     <button type="button" class="btn btn btn-success" (click)=registrarPaciente()>Registrar Paciente</button>
                 </div>
+                <!-- Si tenemos un id como parameto se va a editar un paciente, y usamos el boton modificar paciente -->
                 <div class="button-agregar" *ngIf="!esNuevo()">
                     <button type="button" class="btn btn btn-success" (click)=modificarPaciente()>Modificar Paciente</button>
                 </div>
