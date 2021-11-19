@@ -5,6 +5,8 @@ import { MedicosComponent } from './medicos/medicos.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { PacientesComponent } from './pacientes/pacientes.component';
+import { PacienteComponent } from './paciente/paciente.component';
 
 const routes: Routes = [
   {path: '', pathMatch:'full', redirectTo:'login'},
@@ -13,6 +15,10 @@ const routes: Routes = [
   {path: 'medicos', component: MedicosComponent},
   {path: 'medico', component: MedicoComponent},
   {path: 'medico/:idmedico', component: MedicoComponent},
+  //Rutas Pacientes
+  {path: 'pacientes', component: PacientesComponent},
+  {path: 'paciente', component: PacienteComponent},
+  {path: 'paciente/:idpaciente', component: PacienteComponent},
   {path: '**', component: NotFoundComponent }
 ];
 

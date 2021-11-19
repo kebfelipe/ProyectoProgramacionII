@@ -19,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { MedicoComponent } from './medico/medico.component';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PacientesComponent } from './pacientes/pacientes.component';
+import { PacienteComponent } from './paciente/paciente.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MedicosComponent,
     HomeComponent,
     MedicoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PacientesComponent,
+    PacienteComponent
   ],
   imports: [
     BrowserModule,

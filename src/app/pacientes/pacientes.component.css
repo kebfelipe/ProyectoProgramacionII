@@ -1,0 +1,17 @@
+.first{
+    margin-right: 10px;
+}
+
+.boton-nuevo{
+    margin-top: 2px;
+    margin-bottom: 7px;
+}
+
+.button-agregar{
+    width: 200px;
+}
+
+table tr{
+    text-align: center;
+    vertical-align: center;
+}
