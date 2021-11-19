@@ -1,10 +1,19 @@
-import { NgModule } from '@angular/core';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { MedicoComponent } from './medico/medico.component';
+import { HomeComponent } from './home/home.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: '', pathMatch:'full', redirectTo:'login'},
   {path: 'login', component:LoginComponent},
+  {path: "", component: HomeComponent},
+  {path: 'medicos', component: MedicosComponent},
+  {path: 'medico', component: MedicoComponent},
+  {path: 'medico/:idmedico', component: MedicoComponent},
+  {path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
