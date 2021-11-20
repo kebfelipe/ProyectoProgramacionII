@@ -1,3 +1,4 @@
+import { EspecialidadesComponent } from './especialidades/especialidades.component';
 import { LaboratoriosComponent } from './laboratorios/laboratorios.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MedicoComponent } from './medico/medico.component';
@@ -29,6 +30,8 @@ const routes: Routes = [
   {path: 'laboratorios', component: LaboratoriosComponent},
   {path: 'laboratorio', component: LaboratorioComponent},
   {path: 'laboratorio/:idexamen', component: LaboratorioComponent},
+  //especialidades
+  {path: 'especialidades', component: EspecialidadesComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
