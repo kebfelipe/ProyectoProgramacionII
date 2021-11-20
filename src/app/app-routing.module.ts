@@ -14,10 +14,12 @@ import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full', redirectTo:'inicio'},
+  {path: '', pathMatch:'full', redirectTo:'login'},
   {path: 'consultas', component:ConsultaComponent},
   {path: 'inicio', component:InicioComponent},
+  {path: 'login', component:LoginComponent},
   {path: "", component: HomeComponent},
+
   //medicos
   {path: 'medicos', component: MedicosComponent},
   {path: 'menu', component: MenuComponent},
