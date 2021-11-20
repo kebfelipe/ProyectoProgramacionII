@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+
+
+<div class="listado" style="width: 80%;height:auto;margin-left: 300px;margin-right: auto;position: relative;"  > 
+<div class="wrapper">
+    <h1>Gestion de Especialidades</h1>
+    
+    <div class="row boton-nuevo">
+        <div class="col"></div>
+        <div class="button-agregar">
+            <button type="button" class="btn btn-primary" (click)=verespecialidad(0)>+ Nueva Especialidad</button>
+        </div>
+    </div>
+    
+
+    <div class="tabledoctor">
+        <table class="table table-bordered table-hover">
+            <thead> 
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let especialidad of especialidades">
+                    <td class="align-middle">{{especialidad.idEspecialidad}}</td>
+                    <td class="align-middle">{{especialidad.nombre}}</td>
+                    <td class="align-middle">
+                        <button type="button" class="btn btn-warning first" (click)=verespecialidad(especialidad.idEspecialidad) ><i class="bi bi-pencil" ></i> Editar</button>
+                        <button type="button" class="btn btn-danger " (click)=eliminarespecilidad(especialidad.idEspecialidad)><i class="bi bi-trash"></i> Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

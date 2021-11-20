@@ -33,6 +33,8 @@ import { DatePipe } from '@angular/common'
 import { LaboratoriosComponent } from './laboratorios/laboratorios.component';
 import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { EspecialidadesComponent } from './especialidades/especialidades.component';
+import { EspecialidadComponent } from './especialidad/especialidad.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { InicioComponent } from './inicio/inicio.component';
     LaboratorioComponent,
     LaboratoriosComponent,
     InicioComponent
+    EspecialidadesComponent,
+    EspecialidadComponent
   ],
   imports: [
     BrowserModule,

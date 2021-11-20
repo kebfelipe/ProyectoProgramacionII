@@ -1,0 +1,38 @@
+<app-menu></app-menu>
+
+
+<div class="listado" style="width: 80%;height:auto;margin-left: 300px;margin-right: auto;position: relative;"  > 
+
+<div class="row">
+    <div class="button-agregar">
+        <button type="button" class="btn btn btn-outline-dark active regresar" (click)=regresar()>Regresar</button>
+    </div>
+</div>
+
+<h2 *ngIf="esNuevo(); else elseBlock">
+    Registro de Especialidad
+</h2>
+<ng-template #elseBlock> <h2>Especialidad</h2></ng-template>
+
+<div class="border border-dark rounded wrapper_formulario">
+    <div class="input-group">
+            <div class="medico_informacion_url">
+                <div class="col">
+                    <label for="lbl_medico_url">Nombre: </label>
+                    <input type="text" class="form-control" id="lbl_medico_url"  [(ngModel)]="especialidad_nombre">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col"></div>
+                <div class="button-agregar" *ngIf="esNuevo()">
+                    <button type="button" class="btn btn btn-success" (click)=registarespecialidad()>Registrar Especialidad</button>
+                </div>
+                <div class="button-agregar" *ngIf="!esNuevo()">
+                    <button type="button" class="btn btn btn-success"  (click)=modificarespecialidad()>Modificar Especialidad</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
