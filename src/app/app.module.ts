@@ -30,7 +30,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common'
-
 import { LaboratoriosComponent } from './laboratorios/laboratorios.component';
 import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 
@@ -47,7 +46,8 @@ import { LaboratorioComponent } from './laboratorio/laboratorio.component';
     PacientesComponent,
     PacienteComponent,
     NuevaconsultaComponent,
-    LaboratorioComponent
+    LaboratorioComponent,
+    LaboratoriosComponent
   ],
   imports: [
     BrowserModule,

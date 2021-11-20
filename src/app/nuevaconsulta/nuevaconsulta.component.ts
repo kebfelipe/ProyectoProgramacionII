@@ -53,7 +53,7 @@ export class NuevaconsultaComponent implements OnInit {
     this.ConsultaMedicos();
   }
 
-  agregarCentroDistri(){
+  agregarConsulta(){
     console.log(this.idpaciente, this.idmedico, this.datepipe.transform(this.fecha, 'yyyy-MM-dd HH:mm'), this.consultorio, this.especialidad)
     this.Consulta_Nueva.id_consulta = 3;
     this.Consulta_Nueva.fecha = this.datepipe.transform(this.fecha, 'yyyy-MM-dd hh:mm:ss');

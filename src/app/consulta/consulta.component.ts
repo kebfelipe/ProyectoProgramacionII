@@ -37,42 +37,19 @@ export class ConsultaComponent {
 
   //ACCIÓN BOTÓN ELIMINAR
   eliminar(valor:any){
-/*
-    const dialogRef = this.dialog.open(ConfirmarComponent, {
-      data: {
-         codigo: valor
-      }
-       
- 
-     });*/
-
   }
 
-  //MÉTODO PARA ABRIR EL DIÁLOGO DEL BOTÓN EDITAR
   openDialog(elemento:any, elemtdos : any) {
-   /* const dialogRef = this.dialog.open(EditarComponent, {
-     data: {
-        codigo: elemento,
-        name : elemtdos,
-        contexto : "Región"
-     }
-    });;*/
-    
+
 }
 
-nuevoUsuario(){
+nuevaConsulta(){
  let dialogo = this.dialog.open(NuevaconsultaComponent )
  console.log('HOLAAAA')
 }
 
 getConsulta(){
-  /*
-  this.ServicioConsulta.get("consultas").subscribe(async(data:model_Consulta[] | model_Consulta) => {
-    console.log(await data)
-    let region:model_Consulta[] = data as model_Consulta[];
-    this.dataSource = new MatTableDataSource(region);
-  }, err => console.log('error al consultar info ',err)
-  );*/
+ 
   
   this.ServicioConsulta.get("consultas")
   .subscribe(async (response: any) => {
@@ -81,16 +58,7 @@ getConsulta(){
      
     this.dataSource = new MatTableDataSource(this.consulta);
   });
-/*
-  this.regionservice.consultaInformacionRegion("RR").subscribe(async(data: Region[] | Error[] ) => {
-    console.log(await data)
-    let region:Region[] = data as Region[];
-    region[0].nombre;
-    
-    
-    this.dataSource = new MatTableDataSource(region);
-  }, err => console.log('error al consultar info ',err)
-  );*/
+
 }
 
 }
