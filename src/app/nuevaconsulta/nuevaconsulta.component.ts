@@ -1,6 +1,16 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { model_Consulta } from '../model/model_Consulta';
+import { Model_Medico } from '../model/model_Medico';
+import { Model_Paciente } from '../model/model_Paciente';
+import { ServiceAppMedicoService } from '../service/service-app-medico.service';
+import { ServiceconsultaService } from '../service/serviceconsulta.service';
+import { PacientesService } from '../service/servicePacientes/pacientes.service';
+import { DatePipe } from '@angular/common'
+import { Router } from '@angular/router';
+import { model_NewConsulta } from '../model/model_NewConsulta';
+import { MODEL_NEWCONSU } from '../model/MODEL_NEWCONSU';
 
 interface Food {
   value: string;
@@ -20,64 +30,45 @@ export class NuevaconsultaComponent implements OnInit {
     {value: 'tacos-2', viewValue: 'Tacos'},
   ];
   contexto = "Consulta"
-  nwcodcd : string = "";
-  one: string = "";
-  two: string = "";
-  nwnomcd : string = "";
-  nwcodfox: string = "";
-  nwregion:string = "";
-  nwptcober: string = "";
-  Predeterminado : string = "";
-  animalControl = new FormControl('', Validators.required);
-  CoberturaControl = new FormControl('', Validators.required);
-  //regiondatos: Region[] = [];
-  //private filtroRegion: Array<Region> = [];
-  //cobertura: Cobertura[] = [];
-  //private filtroCobertura: Array<Cobertura> = [];
-  //@ViewChild('multiUserSearch') multiUserSearchInput: ElementRef;
-  //@ViewChild('FiltroRegion') FiltroRegionInput: ElementRef;
+  idpaciente : string = "";
+  idmedico : string = "";
+  fecha=new Date();
+  consultorio : string = "";
+  especialidad : string = "";
+  PacienteControl = new FormControl('', Validators.required);
+  MedicoControl = new FormControl('', Validators.required);
+  pacientedatos: Model_Paciente[] = [];
+  medicodatos: Model_Medico[] = [];
+  Consulta_Nueva: model_NewConsulta = new model_NewConsulta();
+  ClaseEnvia: MODEL_NEWCONSU = new MODEL_NEWCONSU();
 
-  constructor(private matDialogRef: MatDialogRef<NuevaconsultaComponent>) { }
+
+  constructor(private matDialogRef: MatDialogRef<NuevaconsultaComponent>, public serviceAppPacientesService: PacientesService,public serviceAppMedicoService: ServiceAppMedicoService,
+    private ServicioConsulta:ServiceconsultaService,public datepipe: DatePipe,private router:Router) {
+    
+   }
 
   ngOnInit(): void {
-    this.ConsultaRegion();
-    this.ConsultaCobertura();
+    this.ConsultaPaciente();
+    this.ConsultaMedicos();
   }
 
-  onInputChange(){
-    /*
-    const searchInput = this.multiUserSearchInput.nativeElement.value ? 
-    this.multiUserSearchInput.nativeElement.value.toLowerCase(): '';
-    this.cobertura = this.filtroCobertura.filter(u => {
-      const nombre: string = u.codigo.toLowerCase();
-      return nombre.indexOf(searchInput) > -1;
-    });
-  */
-    }
-
-    onFiltroRegion(){
-      /*
-      const filtroInput = this.FiltroRegionInput.nativeElement.value ?
-      this.FiltroRegionInput.nativeElement.value.toLowerCase(): '';
-      this.regiondatos = this.filtroRegion.filter(u => {
-        const name: string = u.nombre.toLowerCase();
-        return name.indexOf(filtroInput) > -1;
-      });*/
-    }
-
   agregarCentroDistri(){
-/*
-    console.log(this.nwcodcd,this.nwnomcd,this.nwcodfox,this.nwregion,this.nwptcober)
-    
-    this.consuCentrosDis.insertaCentroDis("ICD",this.nwcodcd,this.nwnomcd,this.nwcodfox,this.nwregion,this.nwptcober).subscribe(async(data: CentrosDis[] | Error[] ) => {
-      console.log(await data)
-      
-      
-    }, err => console.log('error al INSERTAR ',err)
-    );*/
+    console.log(this.idpaciente, this.idmedico, this.datepipe.transform(this.fecha, 'yyyy-MM-dd HH:mm'), this.consultorio, this.especialidad)
+    this.Consulta_Nueva.id_consulta = 3;
+    this.Consulta_Nueva.fecha = this.datepipe.transform(this.fecha, 'yyyy-MM-dd hh:mm:ss');
+    this.Consulta_Nueva.numConsultorio = this.consultorio;
+    this.Consulta_Nueva.Especialidad.nombre = this.especialidad;
+    this.Consulta_Nueva.medico.idMedico = Number(this.idmedico);
+    this.Consulta_Nueva.paciente.idPaciente = this.idpaciente;
+    this.ClaseEnvia.consulta = this.Consulta_Nueva;
+    this.ServicioConsulta.postConsulta("consultas", this.ClaseEnvia)
+    .subscribe((response: any) => {
+      console.log(response)
+    });
 
-    this.onClose();
-    location.reload();
+   // this.onClose();
+   // location.reload();
 }
 
   ngonDestroy() {
@@ -88,29 +79,22 @@ export class NuevaconsultaComponent implements OnInit {
     this.matDialogRef.close();
   }
 
-  ConsultaRegion(){
-/*
-    this.regionservice.consultaInformacionRegion("RR").subscribe(async(data: Region[] | Error[] ) => {
-      console.log(await data)
-      let region:Region[] = data as Region[];
-      region[0].nombre;
-      this.regiondatos = region;
-      this.filtroRegion = region;
-    
-    }, err => console.log('error al consultar info ',err)
-    );*/
+  ConsultaPaciente(){
+    this.serviceAppPacientesService.get("pacientes")
+    .subscribe((response: any) => {
+      this.pacientedatos = response;
+    });
+
   }
 
-  ConsultaCobertura(){
-/*
-    this.consuCentrosDis.informacionCoberturas().subscribe(async(data: Cobertura[] | Error[] ) => {
-      console.log(await data)
-      let datoscober:Cobertura[] = data as Cobertura[];
-      this.cobertura = datoscober;
-      this.filtroCobertura = datoscober;
-      
-    }, err => console.log('error al consultar info ',err)
-    );*/
+  ConsultaMedicos(){
+
+    this.serviceAppMedicoService.get("medicos")
+    .subscribe((response: any) => {
+      this.medicodatos = response;
+
+    });
+
   }
 
 }

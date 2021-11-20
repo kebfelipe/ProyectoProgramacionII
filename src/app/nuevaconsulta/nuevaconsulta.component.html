@@ -1,4 +1,4 @@
-<div class="listado" style="width: 800px;height: 350px;margin-left: auto;margin-right: auto;">
+<div class="listado" style="width: 900px;height: 350px;margin-left: auto;margin-right: auto;">
     <div style="margin-top: 20px;width: 100%;height: 75px;margin-left: auto;text-align: center;margin-right: auto;  margin-bottom: 20px;">
       <h3 class="titulos navbar-nav" style="font-size:30px;margin-top:20px;color: rgb(0, 0, 0);">Reservar {{contexto}}</h3>
       <hr/>
@@ -7,16 +7,25 @@
 
     <div columns= "2" > 
         <div style="margin-left: 10px;float: left; width: 65%">
-            <label class="label">Código: </label>
-            <mat-form-field class="example-full.width">
-                <mat-label>Código</mat-label>
-                <input matInput  [(ngModel)]="nwcodcd" />
-              </mat-form-field>
-              <label class="label" style="margin-left: 30px;">Nombre: </label>
-            <mat-form-field class="example-full.width">
-                <mat-label>Nombre</mat-label>
-                <input matInput  [(ngModel)]="nwnomcd" />
-              </mat-form-field>
+            <label class="label">Fecha: </label>
+            <mat-form-field appearance="fill">
+              <mat-label>Elige una fecha</mat-label>
+              <input matInput [matDatepicker]="picker " [(ngModel)]="fecha" >
+              <mat-datepicker-toggle matSuffix [for]="picker "></mat-datepicker-toggle>
+              <mat-datepicker #picker ></mat-datepicker>
+            </mat-form-field>
+             
+              <label class="label" style="margin-left: 30px;">Paciente: </label>
+              <mat-form-field appearance="fill">
+                <mat-label>Paciente</mat-label>
+                <mat-select [formControl]="PacienteControl" required [(ngModel)]="idpaciente">
+                  <mat-option *ngFor="let paci of pacientedatos" [value]="paci.idPaciente">
+                    {{paci.nombres}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="PacienteControl.hasError('required')">Seleccione alguno</mat-error>
+                <mat-hint>{{PacienteControl.value?.sound}}</mat-hint>
+              </mat-form-field>|
         </div>
         <div style="float: right;width: 32%">
 
@@ -35,34 +44,33 @@
     <div  style=" margin-top: 100px;">
 
       <div style="text-align: center;" >
-      <label class="label"> Región </label>
-      <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+        <label class="label" style="margin-left: 30px;">Medico: </label>
+        <mat-form-field appearance="fill">
+          <mat-label>Medico</mat-label>
+          <mat-select [formControl]="MedicoControl" required [(ngModel)]="idmedico">
+            <mat-option *ngFor="let medi of medicodatos" [value]="medi.idMedico">
+              {{medi.nombres}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="MedicoControl.hasError('required')">Seleccione alguno</mat-error>
+          <mat-hint>{{MedicoControl.value?.sound}}</mat-hint>
+        </mat-form-field>|
 
-      <label class="label" style="margin-left: 20px;">Agencia de cobertura supervisor: </label>
+      <label class="label" style="margin-left: 20px;">Consultorio: </label>
       <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
-          </mat-option>
-        </mat-select>
+        <mat-label>Consultorio</mat-label>
+        <input matInput [(ngModel)]="consultorio"  />
       </mat-form-field>
   </div>
   <div style="text-align: center;">
 
-    <label class="label"> Códgio Fox </label>
+    <label class="label"> Especialidad </label>
     <mat-form-field class="example-full.width">
-        <mat-label>Código Fox (Casos SAC)</mat-label>
-        <input matInput [(ngModel)]="nwcodfox"  />
+        <mat-label>Especialidad</mat-label>
+        <input matInput [(ngModel)]="especialidad"  />
       </mat-form-field>
 
+    
 </div>
     </div>
     

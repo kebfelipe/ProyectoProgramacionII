@@ -22,38 +22,30 @@
         <!-- Name Column -->
         <ng-container matColumnDef="Fecha">
           <th mat-header-cell *matHeaderCellDef> Fecha (Cita) </th>
-          <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.fecha | date:'yyyy-MM-dd HH:mm'}} </td>
         </ng-container>
       
         <!-- Weight Column -->
         <ng-container matColumnDef="Consultorio">
           <th mat-header-cell *matHeaderCellDef> Consultorio </th>
-          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.numConsultorio}} </td>
         </ng-container>            
       
         <!-- Symbol Column -->
         <ng-container matColumnDef="Especialidad">
           <th mat-header-cell *matHeaderCellDef> Especialidad </th>
-          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.especialidad.nombre}} </td>
         </ng-container>      
         
 
         <ng-container matColumnDef="Medico">
           <th mat-header-cell *matHeaderCellDef> Medico </th>
-          <td mat-cell *matCellDef="let element" >
-            <button mat-icon-button aria-label="Example icon-button with a heart icon"  (click)="openDialog(element.codigo , element.nombre)">
-              <mat-icon>edit</mat-icon>
-            </button>
-             </td>
+          <td mat-cell *matCellDef="let element"> {{element.medico.nombres}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Paciente">
           <th mat-header-cell *matHeaderCellDef> Paciente </th>
-          <td mat-cell *matCellDef="let element" > 
-            <button mat-mini-fab  aria-label="Example icon button with a home icon" color="warn" (click)="eliminar(element.codigo)">
-              <mat-icon>close</mat-icon>
-            </button>
-          </td>
+          <td mat-cell *matCellDef="let element"> {{element.paciente.nombres}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

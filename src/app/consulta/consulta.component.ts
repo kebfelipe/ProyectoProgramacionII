@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { model_Consulta } from '../model/model_Consulta';
 import { NuevaconsultaComponent } from '../nuevaconsulta/nuevaconsulta.component';
+import { ServiceconsultaService } from '../service/serviceconsulta.service';
 
 @Component({
   selector: 'app-consulta',
@@ -16,7 +18,7 @@ export class ConsultaComponent {
   miapellido = window.sessionStorage.getItem("Apellido");
   displayedColumns: string[] = ['Fecha', 'Consultorio', 'Especialidad', 'Medico','Paciente'];
   dataSource! : MatTableDataSource<any>;
-
+  consulta: model_Consulta[] = [];
 
   //MÉTODO PARA FILTRAR LA LISTA
   applyFilter(event: Event) {
@@ -24,13 +26,13 @@ export class ConsultaComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(public dialog: MatDialog) { 
+  constructor(public dialog: MatDialog,private ServicioConsulta:ServiceconsultaService) { 
     //CREANDO SESIÓN
   }
 
 
   ngOnInit(): void {
-  this.ConsultaRegion()
+  this.getConsulta()
   }
 
   //ACCIÓN BOTÓN ELIMINAR
@@ -63,7 +65,22 @@ nuevoUsuario(){
  console.log('HOLAAAA')
 }
 
-ConsultaRegion(){
+getConsulta(){
+  /*
+  this.ServicioConsulta.get("consultas").subscribe(async(data:model_Consulta[] | model_Consulta) => {
+    console.log(await data)
+    let region:model_Consulta[] = data as model_Consulta[];
+    this.dataSource = new MatTableDataSource(region);
+  }, err => console.log('error al consultar info ',err)
+  );*/
+  
+  this.ServicioConsulta.get("consultas")
+  .subscribe(async (response: any) => {
+    console.log(await response)
+     this.consulta = response;
+     
+    this.dataSource = new MatTableDataSource(this.consulta);
+  });
 /*
   this.regionservice.consultaInformacionRegion("RR").subscribe(async(data: Region[] | Error[] ) => {
     console.log(await data)

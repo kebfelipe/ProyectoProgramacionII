@@ -26,6 +26,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import { NuevaconsultaComponent } from './nuevaconsulta/nuevaconsulta.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common'
 
 
 @NgModule({
@@ -59,10 +63,13 @@ import {MatSelectModule} from '@angular/material/select';
     MatDialogModule,
     MatTableModule,
     MatIconModule,
-    MatSelectModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   entryComponents: [],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
