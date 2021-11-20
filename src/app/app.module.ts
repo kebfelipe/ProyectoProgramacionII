@@ -52,7 +52,7 @@ import { EspecialidadComponent } from './especialidad/especialidad.component';
     LaboratorioComponent,
     LaboratoriosComponent,
     InicioComponent,
-   
+    EspecialidadesComponent,
     EspecialidadComponent
   ],
   imports: [
