@@ -6,9 +6,9 @@
 </div>
 <!-- Comprobamos si es un nuevo paciente que se va a registrar, de lo contrario se va a editar a un paciente -->
 <h2 *ngIf="esNuevo(); else elseBlock">
-    Registro de Medicos
+    Registro de Pacientes
 </h2>
-<ng-template #elseBlock> <h2>Medico</h2></ng-template>
+<ng-template #elseBlock> <h2>Paciente</h2></ng-template>
 
 <!-- Formulario -->
 <div class="border border-dark rounded wrapper_formulario">
@@ -34,7 +34,7 @@
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">DNI: </label>
-                    <input type="number"  class="form-control" id="lbl_medico_cmp" aria-describedby="sm_medico_cmp" [(ngModel)]="paciente_dni">
+                    <input type="number"  class="form-control" id="lbl_medico_cmp" maxlength="8" aria-describedby="sm_medico_cmp" [(ngModel)]="paciente_dni">
                     <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio. Escribir 8 números</small>
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">Telefono: </label>
-                    <input type="number" class="form-control" id="lbl_medico_cmp" [(ngModel)]="paciente_telefono" aria-describedby="sm_medico_cmp">
+                    <input type="number" class="form-control" id="lbl_medico_cmp" [(ngModel)]="paciente_telefono" aria-describedby="sm_medico_cmp" maxlength="9">
                     <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio. Escribir 9 números</small>
                 </div>
             </div>

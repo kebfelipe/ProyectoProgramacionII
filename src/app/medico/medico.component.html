@@ -15,10 +15,12 @@
             <div>
                 <img class="rounded imgdoctor" [src]="medico_url"/>
             </div>
-            <input type="file" class="form-control-file" id="img_foto_medico"  [(ngModel)]="medico_url">
+            <!--<input type="file" class="form-control-file" id="img_foto_medico"  [(ngModel)]="medico_url">-->
         </div>
         <div class="form-group col">
+
             <div class="input-group medico_informacion_nombre">
+                
                 <div class="col medico_nombre">
                     <label for="lbl_medico_nombre">Nombre: </label>
                     <input type="email" class="form-control" id="lbl_medico_nombre" aria-describedby="sm_medico_nombre" [(ngModel)]="medico_nombre">
@@ -30,6 +32,7 @@
                     <small id="sm_medico_apellido" class="form-text text-muted">Campo Obligatorio.</small>
                 </div>
             </div>
+            <br>
             <div class="medico_informacion_cmp">
                 <div class="col">
                     <label for="lbl_medico_cmp">CMP: </label>
@@ -37,6 +40,15 @@
                     <small id="sm_medico_cmp" class="form-text text-muted">Campo Obligatorio.</small>
                 </div>
             </div>
+            <br>
+            <div class="medico_informacion_url">
+                <div class="col">
+                    <label for="lbl_medico_url">URL: </label>
+                    <input type="email" class="form-control" id="lbl_medico_url"  [(ngModel)]="medico_url">
+                </div>
+            </div>
+            <br>
+            <br>
             <div class="row">
                 <div class="col"></div>
                 <div class="button-agregar" *ngIf="esNuevo()">

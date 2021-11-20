@@ -33,7 +33,7 @@ export class LaboratoriosComponent implements OnInit {
   }
 
   eliminarLaboratorio(idlab: any): void{
-    this.serviceAppMedicoService.delete("laboratorio/"+idlab)
+    this.serviceAppMedicoService.delete("examenes/"+idlab)
       .subscribe((response: any) => {
         window.location.reload();
       });
