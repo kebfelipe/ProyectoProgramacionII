@@ -26,9 +26,9 @@ export class EspecialidadesComponent implements OnInit {
 
   verespecialidad(idlab: any) : void{
     if(idlab == 0){
-      this.router.navigate(['/especialidades']);
+      this.router.navigate(['/especialidad']);
     }else{
-      this.router.navigate(['/especialidades/' + idlab]);
+      this.router.navigate(['/especialidad/' + idlab]);
     }
   }
 
