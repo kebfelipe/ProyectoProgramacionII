@@ -7,12 +7,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { PacienteComponent } from './paciente/paciente.component';
+import { ConsultaComponent } from './consulta/consulta.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full', redirectTo:'login'},
-  {path: 'login', component:LoginComponent},
+  {path: '', pathMatch:'full', redirectTo:'menu'},
+  {path: 'consultas', component:ConsultaComponent},
   {path: "", component: HomeComponent},
   {path: 'medicos', component: MedicosComponent},
+  {path: 'menu', component: MenuComponent},
   {path: 'medico', component: MedicoComponent},
   {path: 'medico/:idmedico', component: MedicoComponent},
   //Rutas Pacientes

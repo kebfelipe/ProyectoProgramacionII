@@ -1,0 +1,82 @@
+<!doctype html>
+
+
+<head>
+  <meta charset="utf-8">
+  <title>ProyectoProgramacionII</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+  
+    <div class="bar_menu" >
+      <header>
+        <a href="/" class="btn-group link-home">
+          <img class="logo" src="./assets/logo_angel.png" />
+          <h1>Hospital <br> Los Angeles</h1>
+        </a>
+      </header>
+      <div class="lineaseparadora"></div>
+      <nav class="navbar navbar-expand-md  ">
+        <button class="navbar-toggler hidden-sm-up" style="position: relative;" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault"> 
+        <ul>
+          <a class="nav-color" href="/">
+            <li>
+              <i class="bi bi-house-fill icon-menu-home d-inline"></i>
+              <p class="d-inline">Home</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/medicos">
+            <li>
+              <i class="d-inline bi bi-person-badge-fill icon-menu-home"></i>
+              <p class="d-inline">Médicos</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/especialidades">
+            <li>
+              <i class="d-inline bi bi-briefcase-fill icon-menu-home"></i>
+              <p class="d-inline">Especialidades</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/pacientes">
+            <li>
+              <i class="d-inline bi bi-people-fill icon-menu-home"></i>
+              <p class="d-inline">Pacientes</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/consultas">
+            <li>
+              <i class="d-inline bi bi-calendar icon-menu-home"></i>
+              <p class="d-inline">Consultas</p>
+            </li>
+          </a>
+          <a class="nav-color" href="/laboratorios">
+            <li>
+              <i class="d-inline bi bi-building icon-menu-home"></i>
+              <p class="d-inline">Laboratorios</p>
+            </li>
+          </a>
+        </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="body_hospital">
+      <div class="header_wrapper">
+        <div class="row">
+          <div class="col"></div>
+          <div>
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+

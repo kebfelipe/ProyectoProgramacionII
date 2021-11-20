@@ -1,1 +1,76 @@
-<p>consulta works!</p>
+<app-menu></app-menu>
+
+<div class="listado" style="width: 80%;height:auto;margin-left: 300px;margin-right: auto;position: relative;"  >
+    <div style="margin-top: 20px;width: 100%;height: 75px;border-radius: 0.5cm; margin-left: auto;margin-right: auto; text-align: center; margin-bottom: 20px;">
+      <h1 class="titulos navbar-nav" style="font-size: 50px;margin-top:20px;color: rgb(0, 0, 0);">Consultas</h1>
+      <hr/>
+      <button mat-flat-button color="primary" style="float: right; margin-right: 20px;" (click)="nuevoUsuario()"  >
+        <mat-icon>playlist_add</mat-icon>
+        Reservar
+      </button>
+    </div>
+    
+    <div  style="width: 100%;height: auto;margin-left: auto;margin-right: auto; background-color: white;margin-top: 40px;border-radius: 0.5cm;">
+      <mat-form-field appearance="standard" style="width: 100%;" >
+        <mat-label>Filtro</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+      </mat-form-field>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" style="width: 90%;margin-left: auto;margin-right: auto;margin-bottom: 20px;">
+      
+
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="Fecha">
+          <th mat-header-cell *matHeaderCellDef> Fecha (Cita) </th>
+          <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Consultorio">
+          <th mat-header-cell *matHeaderCellDef> Consultorio </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>            
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Especialidad">
+          <th mat-header-cell *matHeaderCellDef> Especialidad </th>
+          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+        </ng-container>      
+        
+
+        <ng-container matColumnDef="Medico">
+          <th mat-header-cell *matHeaderCellDef> Medico </th>
+          <td mat-cell *matCellDef="let element" >
+            <button mat-icon-button aria-label="Example icon-button with a heart icon"  (click)="openDialog(element.codigo , element.nombre)">
+              <mat-icon>edit</mat-icon>
+            </button>
+             </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Paciente">
+          <th mat-header-cell *matHeaderCellDef> Paciente </th>
+          <td mat-cell *matCellDef="let element" > 
+            <button mat-mini-fab  aria-label="Example icon button with a home icon" color="warn" (click)="eliminar(element.codigo)">
+              <mat-icon>close</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No hay coincidencias con: "{{input.value}}"</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+        <div>
+          <p class="footer-message">Hospital Los Angeles © 2021. Todos los derechos reservados</p>
+        </div>
+      </footer>
+</div>
+
+

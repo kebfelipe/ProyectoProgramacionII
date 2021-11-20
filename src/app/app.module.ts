@@ -21,6 +21,12 @@ import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { PacienteComponent } from './paciente/paciente.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import { NuevaconsultaComponent } from './nuevaconsulta/nuevaconsulta.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +39,8 @@ import { PacienteComponent } from './paciente/paciente.component';
     MedicoComponent,
     NotFoundComponent,
     PacientesComponent,
-    PacienteComponent
+    PacienteComponent,
+    NuevaconsultaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,11 @@ import { PacienteComponent } from './paciente/paciente.component';
     NgbModule,
     NgbDropdownModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatTableModule,
+    MatIconModule,
+    MatSelectModule
   ],
   entryComponents: [],
   providers: [],

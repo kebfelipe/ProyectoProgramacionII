@@ -1,0 +1,69 @@
+<div class="listado" style="width: 800px;height: 350px;margin-left: auto;margin-right: auto;">
+    <div style="margin-top: 20px;width: 100%;height: 75px;margin-left: auto;text-align: center;margin-right: auto;  margin-bottom: 20px;">
+      <h3 class="titulos navbar-nav" style="font-size:30px;margin-top:20px;color: rgb(0, 0, 0);">Reservar {{contexto}}</h3>
+      <hr/>
+      
+    </div>
+
+    <div columns= "2" > 
+        <div style="margin-left: 10px;float: left; width: 65%">
+            <label class="label">Código: </label>
+            <mat-form-field class="example-full.width">
+                <mat-label>Código</mat-label>
+                <input matInput  [(ngModel)]="nwcodcd" />
+              </mat-form-field>
+              <label class="label" style="margin-left: 30px;">Nombre: </label>
+            <mat-form-field class="example-full.width">
+                <mat-label>Nombre</mat-label>
+                <input matInput  [(ngModel)]="nwnomcd" />
+              </mat-form-field>
+        </div>
+        <div style="float: right;width: 32%">
+
+               <button mat-flat-button color="primary" style="margin-right: 10px; width: 120px;" (click)="agregarCentroDistri()"  >
+                 <mat-icon>playlist_add</mat-icon>
+                 Guardar
+               </button>
+               <button mat-flat-button color="warn" style="width: 120px" (click)="onClose()" >  
+                <mat-icon>close</mat-icon>
+                Cancelar
+               </button>
+
+        </div>
+
+    </div>
+    <div  style=" margin-top: 100px;">
+
+      <div style="text-align: center;" >
+      <label class="label"> Región </label>
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <label class="label" style="margin-left: 20px;">Agencia de cobertura supervisor: </label>
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div style="text-align: center;">
+
+    <label class="label"> Códgio Fox </label>
+    <mat-form-field class="example-full.width">
+        <mat-label>Código Fox (Casos SAC)</mat-label>
+        <input matInput [(ngModel)]="nwcodfox"  />
+      </mat-form-field>
+
+</div>
+    </div>
+    
+</div>
