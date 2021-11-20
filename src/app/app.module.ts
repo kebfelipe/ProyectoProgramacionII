@@ -32,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common'
 import { LaboratoriosComponent } from './laboratorios/laboratorios.component';
 import { LaboratorioComponent } from './laboratorio/laboratorio.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { LaboratorioComponent } from './laboratorio/laboratorio.component';
     PacienteComponent,
     NuevaconsultaComponent,
     LaboratorioComponent,
-    LaboratoriosComponent
+    LaboratoriosComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

@@ -11,10 +11,12 @@ import { PacienteComponent } from './paciente/paciente.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { MenuComponent } from './menu/menu.component';
 import { LaboratorioComponent } from './laboratorio/laboratorio.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full', redirectTo:'menu'},
+  {path: '', pathMatch:'full', redirectTo:'inicio'},
   {path: 'consultas', component:ConsultaComponent},
+  {path: 'inicio', component:InicioComponent},
   {path: "", component: HomeComponent},
   //medicos
   {path: 'medicos', component: MedicosComponent},
