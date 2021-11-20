@@ -1,6 +1,7 @@
 <div class="wrapper">
+    <!-- Título principal de la pagina -->
     <h1>Control Pacientes</h1>
-    
+    <!-- Boton para agregar un nuevo paciente -->
     <div class="row boton-nuevo">
         <div class="col"></div>
         <div class="button-agregar">
@@ -8,7 +9,9 @@
         </div>
     </div>
     <div>
+        <!-- Tabla donde se muestran los pacientes -->
         <table class="table table-bordered table-hover">
+            <!-- con el thead se muestran los titulos de las columnas -->
             <thead> 
                 <tr>
                     <th>ID</th>
@@ -21,7 +24,9 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
+            <!-- Aqui se muestran los pacientes -->
             <tbody>
+                <!-- Recorro el array pacientes declarada en pacientes.component.ts con un for of para obtener la información de cada uno de ellos -->
                 <tr *ngFor="let paciente of pacientes">
                     <td class="align-middle">{{paciente.idPaciente}}</td>
                     <td class="align-middle">{{paciente.nombres}}</td>
@@ -31,7 +36,9 @@
                     <td class="align-middle">{{paciente.telefono}}</td>
                     <td class="align-middle">{{paciente.direccion}}</td>
                     <td class="align-middle">
+                        <!-- Boton para editar un paciente -->
                         <button type="button" class="btn btn-warning first" (click)=verPaciente(paciente.idPaciente)  ><i class="bi bi-pencil" ></i> Editar</button>
+                        <!-- Boton para eliminar un paciente -->
                         <button type="button" class="btn btn-danger " (click)=eliminarPaciente(paciente.idPaciente)><i class="bi bi-trash"></i> Borrar</button>
                     </td>
                 </tr>
