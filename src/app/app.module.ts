@@ -51,8 +51,8 @@ import { EspecialidadComponent } from './especialidad/especialidad.component';
     NuevaconsultaComponent,
     LaboratorioComponent,
     LaboratoriosComponent,
-    InicioComponent
-    EspecialidadesComponent,
+    InicioComponent,
+   
     EspecialidadComponent
   ],
   imports: [
