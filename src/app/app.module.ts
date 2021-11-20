@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { PacienteComponent } from './paciente/paciente.component';
+import { LaboratoriosComponent } from './laboratorios/laboratorios.component';
+import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PacienteComponent } from './paciente/paciente.component';
     MedicoComponent,
     NotFoundComponent,
     PacientesComponent,
-    PacienteComponent
+    PacienteComponent,
+    LaboratoriosComponent,
+    LaboratorioComponent
   ],
   imports: [
     BrowserModule,

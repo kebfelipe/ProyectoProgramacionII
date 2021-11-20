@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="button-agregar">
+        <button type="button" class="btn btn btn-outline-dark active regresar" (click)=regresar()>Regresar</button>
+    </div>
+</div>
+
+<h2 *ngIf="esNuevo(); else elseBlock">
+    Registro de Laboratorios
+</h2>
+<ng-template #elseBlock> <h2>Laboratorio</h2></ng-template>
+
+<div class="border border-dark rounded wrapper_formulario">
+ 
+        <div class="form-group col">
+            <div class="lab_informacion_nombre">
+                <div class="col">
+                    <label for="lbl_lab_nombre">Nombre: </label>
+                    <input type="text" class="form-control" id="lbl_lab_nombre" aria-describedby="sm_lab_nombre" [(ngModel)]="lab_nombre">
+                    <small id="sm_lab_nombre" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+            </div>
+            <div class="lab_informacion_descripcion">
+                <div class="col">
+                    <label for="lbl_lab_desc">Descripcion: </label>
+                    <input type="text" class="form-control" id="lbl_lab_desc" aria-describedby="sm_lab_desc" [(ngModel)]="lab_descripcion">
+                    <small id="sm_lab_desc" class="form-text text-muted">Campo Obligatorio.</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="button-agregar" *ngIf="esNuevo()">
+                    <button type="button" class="btn btn btn-success" (click)=registarlab()>Registrar Laboratorio</button>
+                </div>
+                <div class="button-agregar" *ngIf="!esNuevo()">
+                    <button type="button" class="btn btn btn-success"  (click)=modificarlab()>Modificar Laboratorio</button>
+                </div>
+            </div>
+        </div>
+
+</div>
