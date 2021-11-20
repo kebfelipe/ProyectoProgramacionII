@@ -31,6 +31,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common'
 
+import { LaboratoriosComponent } from './laboratorios/laboratorios.component';
+import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { DatePipe } from '@angular/common'
     NotFoundComponent,
     PacientesComponent,
     PacienteComponent,
-    NuevaconsultaComponent
+    NuevaconsultaComponent,
+    LaboratorioComponent
   ],
   imports: [
     BrowserModule,

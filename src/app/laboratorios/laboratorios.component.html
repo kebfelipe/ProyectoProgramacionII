@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <h1>Gestion de Laboratorios</h1>
+    
+    <div class="row boton-nuevo">
+        <div class="col"></div>
+        <div class="button-agregar">
+            <button type="button" class="btn btn-primary" (click)=verlaboratorio(0)>+ Laboratorio Nuevo</button>
+        </div>
+    </div>
+    
+
+    <div class="tabledoctor">
+        <table class="table table-bordered table-hover">
+            <thead> 
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lab of labs">
+                    <td class="align-middle">{{lab.idExamen}}</td>
+                    <td class="align-middle">{{lab.nombre}}</td>
+                    <td class="align-middle">{{lab.descripcion}}</td>
+                    <td class="align-middle">
+                        <button type="button" class="btn btn-warning first" (click)=verlaboratorio(lab.idExamen) ><i class="bi bi-pencil" ></i> Editar</button>
+                        <button type="button" class="btn btn-danger " (click)=eliminarLaboratorio(lab.idExamen)><i class="bi bi-trash"></i> Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

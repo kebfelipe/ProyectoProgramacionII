@@ -19,6 +19,8 @@ export class PacientesService {
 
   //Guardamos un paciente en  la base de datos
   postPaciente(endpoint:string, data:any){
+    console.log(data);
+    
     return this.http.post(this.url + endpoint, data);
   }
   //Editamos un paciente de la base de datos

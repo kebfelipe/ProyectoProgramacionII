@@ -13,11 +13,23 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navegar() {
+  medicos() {
     this.router.navigate(['/medicos'])
   }
 
+  especialidades(){
+    this.router.navigate(['/especialidades'])
+  }
+  
   pacientes(){
     this.router.navigate(['/pacientes'])
+  }
+
+  consultas(){
+    this.router.navigate(['/consultas'])
+  }
+
+  laboratorios(){
+    this.router.navigate(['/laboratorios'])
   }
 }

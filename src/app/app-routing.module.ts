@@ -1,3 +1,4 @@
+import { LaboratoriosComponent } from './laboratorios/laboratorios.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MedicoComponent } from './medico/medico.component';
 import { HomeComponent } from './home/home.component';
@@ -9,11 +10,13 @@ import { PacientesComponent } from './pacientes/pacientes.component';
 import { PacienteComponent } from './paciente/paciente.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { MenuComponent } from './menu/menu.component';
+import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 
 const routes: Routes = [
   {path: '', pathMatch:'full', redirectTo:'menu'},
   {path: 'consultas', component:ConsultaComponent},
   {path: "", component: HomeComponent},
+  //medicos
   {path: 'medicos', component: MedicosComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'medico', component: MedicoComponent},
@@ -22,6 +25,10 @@ const routes: Routes = [
   {path: 'pacientes', component: PacientesComponent},
   {path: 'paciente', component: PacienteComponent},
   {path: 'paciente/:idpaciente', component: PacienteComponent},
+  //Laboratorios
+  {path: 'laboratorios', component: LaboratoriosComponent},
+  {path: 'laboratorio', component: LaboratorioComponent},
+  {path: 'laboratorio/:idexamen', component: LaboratorioComponent},
   {path: '**', component: NotFoundComponent }
 ];
 

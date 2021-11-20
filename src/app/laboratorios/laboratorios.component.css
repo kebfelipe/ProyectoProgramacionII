@@ -1,0 +1,26 @@
+.first{
+    margin-right: 10px;
+}
+
+.boton-nuevo{
+    margin-top: 2px;
+    margin-bottom: 7px;
+}
+
+.button-agregar{
+    width: 170px;
+}
+
+.imgdoctor{
+    width: 120px;
+    height: 80px;
+}
+
+table tr{
+    text-align: center;
+    vertical-align: center;
+}
+
+.table-img{
+    width: 120px;
+}
