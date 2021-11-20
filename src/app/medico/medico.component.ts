@@ -69,7 +69,7 @@ export class MedicoComponent implements OnInit {
       this.medico_nuevo.apellidos = this.medico_apellido;
       this.medico_nuevo.cmp = this.medico_cmp;
       this.medico_nuevo.fotoUrl = this.medico_url;
-      this.serviceAppMedicoService.postMedico("medicos", this.medico_nuevo)
+      this.serviceAppMedicoService.post("medicos", this.medico_nuevo)
       .subscribe((response: any) => {
         this.router.navigate(['/medicos']);
       });
@@ -84,7 +84,7 @@ export class MedicoComponent implements OnInit {
       this.medico_nuevo.apellidos = this.medico_apellido;
       this.medico_nuevo.cmp = this.medico_cmp;
       this.medico_nuevo.fotoUrl = this.medico_url;
-      this.serviceAppMedicoService.postMedico("medicos", this.medico_nuevo)
+      this.serviceAppMedicoService.put("medicos", this.medico_nuevo)
       .subscribe((response: any) => {
         this.router.navigate(['/medicos']);
       });

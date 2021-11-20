@@ -16,11 +16,11 @@ export class ServiceAppMedicoService {
     return this.http.get(this.url + endpoint);
   }
 
-  postMedico(endpoint:string, data:any){
+  post(endpoint:string, data:any){
     return this.http.post(this.url + endpoint, data);
   }
 
-  putMedico(endpoint:string, data:any){
+  put(endpoint:string, data:any){
     return this.http.put(this.url + endpoint, data);
   }
 

@@ -53,7 +53,7 @@ export class LaboratorioComponent implements OnInit {
       this.lab_nuevo.idExamen = 0;
       this.lab_nuevo.nombre = this.lab_nombre;
       this.lab_nuevo.descripcion = this.lab_descripcion;
-      this.serviceAppMedicoService.postMedico("examenes", this.lab_nuevo)
+      this.serviceAppMedicoService.post("examenes", this.lab_nuevo)
       .subscribe((response: any) => {
         this.router.navigate(['/laboratorios']);
       });
@@ -66,7 +66,7 @@ export class LaboratorioComponent implements OnInit {
       this.lab_nuevo.idExamen = this.id_lab;
       this.lab_nuevo.nombre = this.lab_nombre;
       this.lab_nuevo.descripcion = this.lab_descripcion;
-      this.serviceAppMedicoService.postMedico("examenes", this.lab_nuevo)
+      this.serviceAppMedicoService.put("examenes", this.lab_nuevo)
       .subscribe((response: any) => {
         this.router.navigate(['/laboratorios']);
       });
